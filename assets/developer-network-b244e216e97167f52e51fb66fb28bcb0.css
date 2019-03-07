@@ -9158,7 +9158,7 @@ h3 {
   bottom: 0;
   right: 0;
   opacity: 0;
-  background-image: url("assets/img/stars-471b7ce7a5aa355cace2d27cac687e07.jpg");
+  background-image: url("img/stars-471b7ce7a5aa355cace2d27cac687e07.jpg");
   background-size: 101%;
   content: "";
   z-index: -1;
@@ -9625,7 +9625,7 @@ LOGGIN IN MODAL
 .home-hero-outer-container {
   display: flex;
   flex-direction: row;
-  background-image: url("assets/img/header.jpeg");
+  background-image: url("img/header.jpeg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
   justify-content: flex-end;
