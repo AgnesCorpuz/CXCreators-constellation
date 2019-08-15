@@ -718,6 +718,23 @@ define("developer-network/tests/integration/components/profile-page/project-deta
     });
   });
 });
+define("developer-network/tests/integration/helpers/csharp-rename-test", ["qunit", "ember-qunit", "@ember/test-helpers"], function (_qunit, _emberQunit, _testHelpers) {
+  "use strict";
+
+  (0, _qunit.module)('Integration | Helper | csharp-rename', function (hooks) {
+    (0, _emberQunit.setupRenderingTest)(hooks); // Replace this with your real tests.
+
+    (0, _qunit.test)('it renders', async function (assert) {
+      this.set('inputValue', '1234');
+      await (0, _testHelpers.render)(Ember.HTMLBars.template({
+        "id": "mGUmFmuY",
+        "block": "{\"symbols\":[],\"statements\":[[1,[29,\"csharp-rename\",[[25,[\"inputValue\"]]],null],false]],\"hasEval\":false}",
+        "meta": {}
+      }));
+      assert.equal(this.element.textContent.trim(), '1234');
+    });
+  });
+});
 define("developer-network/tests/integration/helpers/limit-text-test", ["qunit", "ember-qunit", "@ember/test-helpers"], function (_qunit, _emberQunit, _testHelpers) {
   "use strict";
 
@@ -742,6 +759,10 @@ define("developer-network/tests/lint/app.lint-test", [], function () {
   QUnit.test('adapters/badge.js', function (assert) {
     assert.expect(1);
     assert.ok(false, 'adapters/badge.js should pass ESLint\n\n13:3 - Unexpected console statement. (no-console)\n28:5 - Unexpected console statement. (no-console)\n32:5 - Unexpected console statement. (no-console)\n55:5 - Unexpected console statement. (no-console)\n58:5 - Unexpected console statement. (no-console)\n65:10 - \'store\' is defined but never used. (no-unused-vars)\n65:17 - \'type\' is defined but never used. (no-unused-vars)\n65:23 - \'sinceToken\' is defined but never used. (no-unused-vars)\n78:5 - Unexpected console statement. (no-console)\n81:5 - Unexpected console statement. (no-console)\n88:41 - \'snapshot\' is defined but never used. (no-unused-vars)\n100:5 - Unexpected console statement. (no-console)\n105:5 - Unexpected console statement. (no-console)\n146:5 - Unexpected console statement. (no-console)');
+  });
+  QUnit.test('adapters/genbadge.js', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'adapters/genbadge.js should pass ESLint\n\n13:3 - Unexpected console statement. (no-console)\n28:5 - Unexpected console statement. (no-console)\n29:9 - \'badgesArr\' is assigned a value but never used. (no-unused-vars)\n32:5 - Unexpected console statement. (no-console)\n55:5 - Unexpected console statement. (no-console)\n58:5 - Unexpected console statement. (no-console)\n86:6 - Unexpected console statement. (no-console)\n89:6 - Unexpected console statement. (no-console)\n99:5 - Unexpected console statement. (no-console)\n102:5 - Unexpected console statement. (no-console)\n109:41 - \'snapshot\' is defined but never used. (no-unused-vars)\n121:5 - Unexpected console statement. (no-console)\n126:5 - Unexpected console statement. (no-console)');
   });
   QUnit.test('adapters/profile.js', function (assert) {
     assert.expect(1);
@@ -875,6 +896,14 @@ define("developer-network/tests/lint/app.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'components/profile-page/details.js should pass ESLint\n\n');
   });
+  QUnit.test('components/profile-page/genbadge-container.js', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'components/profile-page/genbadge-container.js should pass ESLint\n\n2:8 - \'GenbadgeValidations\' is defined but never used. (no-unused-vars)\n3:8 - \'lookupValidator\' is defined but never used. (no-unused-vars)\n4:8 - \'Changeset\' is defined but never used. (no-unused-vars)');
+  });
+  QUnit.test('components/profile-page/genbadge-detail.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'components/profile-page/genbadge-detail.js should pass ESLint\n\n');
+  });
   QUnit.test('components/profile-page/project-container.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'components/profile-page/project-container.js should pass ESLint\n\n');
@@ -899,6 +928,10 @@ define("developer-network/tests/lint/app.lint-test", [], function () {
     assert.expect(1);
     assert.ok(true, 'formats.js should pass ESLint\n\n');
   });
+  QUnit.test('helpers/csharp-rename.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'helpers/csharp-rename.js should pass ESLint\n\n');
+  });
   QUnit.test('helpers/eq.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'helpers/eq.js should pass ESLint\n\n');
@@ -914,6 +947,10 @@ define("developer-network/tests/lint/app.lint-test", [], function () {
   QUnit.test('models/badge.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'models/badge.js should pass ESLint\n\n');
+  });
+  QUnit.test('models/genbadge.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'models/genbadge.js should pass ESLint\n\n');
   });
   QUnit.test('models/profile.js', function (assert) {
     assert.expect(1);
@@ -949,7 +986,7 @@ define("developer-network/tests/lint/app.lint-test", [], function () {
   });
   QUnit.test('routes/profile/index.js', function (assert) {
     assert.expect(1);
-    assert.ok(false, 'routes/profile/index.js should pass ESLint\n\n2:10 - \'computed\' is defined but never used. (no-unused-vars)\n16:18 - Don\'t use observers if possible (ember/no-observers)\n29:25 - Unexpected console statement. (no-console)\n49:25 - Unexpected console statement. (no-console)');
+    assert.ok(false, 'routes/profile/index.js should pass ESLint\n\n2:10 - \'computed\' is defined but never used. (no-unused-vars)\n16:18 - Don\'t use observers if possible (ember/no-observers)\n29:25 - Unexpected console statement. (no-console)\n51:25 - Unexpected console statement. (no-console)');
   });
   QUnit.test('serializers/application.js', function (assert) {
     assert.expect(1);
@@ -958,6 +995,10 @@ define("developer-network/tests/lint/app.lint-test", [], function () {
   QUnit.test('serializers/badge.js', function (assert) {
     assert.expect(1);
     assert.ok(false, 'serializers/badge.js should pass ESLint\n\n8:54 - \'new_payload\' is not defined. (no-undef)\n11:15 - \'snapshot\' is defined but never used. (no-unused-vars)\n11:25 - \'options\' is defined but never used. (no-unused-vars)');
+  });
+  QUnit.test('serializers/genbadge.js', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'serializers/genbadge.js should pass ESLint\n\n8:54 - \'new_payload\' is not defined. (no-undef)\n11:15 - \'snapshot\' is defined but never used. (no-unused-vars)\n11:25 - \'options\' is defined but never used. (no-unused-vars)');
   });
   QUnit.test('serializers/profile.js', function (assert) {
     assert.expect(1);
@@ -1026,6 +1067,10 @@ define("developer-network/tests/lint/app.lint-test", [], function () {
   QUnit.test('validations/badge.js', function (assert) {
     assert.expect(1);
     assert.ok(false, 'validations/badge.js should pass ESLint\n\n21:56 - Unnecessary escape character: \\+. (no-useless-escape)\n21:99 - Unnecessary escape character: \\+. (no-useless-escape)');
+  });
+  QUnit.test('validations/genbadge.js', function (assert) {
+    assert.expect(1);
+    assert.ok(false, 'validations/genbadge.js should pass ESLint\n\n21:56 - Unnecessary escape character: \\+. (no-useless-escape)\n21:99 - Unnecessary escape character: \\+. (no-useless-escape)');
   });
   QUnit.test('validations/profile.js', function (assert) {
     assert.expect(1);
@@ -1151,6 +1196,10 @@ define("developer-network/tests/lint/tests.lint-test", [], function () {
   QUnit.test('integration/components/profile-page/project-detail-test.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'integration/components/profile-page/project-detail-test.js should pass ESLint\n\n');
+  });
+  QUnit.test('integration/helpers/csharp-rename-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'integration/helpers/csharp-rename-test.js should pass ESLint\n\n');
   });
   QUnit.test('integration/helpers/limit-text-test.js', function (assert) {
     assert.expect(1);

@@ -10032,8 +10032,12 @@ h3 {
 
 .app-foundry-header {
   position: fixed;
+  transform: translate3d(0, 0, 0);
   height: 90px;
-  width: 100%;
+  right: 0;
+  left: 0;
+  top: 0;
+  box-sizing: border-box;
   z-index: 502;
   flex: 1 0 auto;
 }
@@ -10111,9 +10115,9 @@ h3 {
     width: 200px;
   }
 }
-@media (max-width: 320px) {
+@media (max-width: 500px) {
   .app-foundry-header .header-container .top-container .logo-container {
-    width: 180px;
+    width: 150px;
   }
 }
 .app-foundry-header .header-container .top-container .header-right-side {
@@ -10123,8 +10127,13 @@ h3 {
   justify-content: flex-end;
   font-weight: bold;
   color: white;
-  margin: 10px;
+  margin: 10px 0;
   min-width: 210px;
+}
+@media (max-width: 768px) {
+  .app-foundry-header .header-container .top-container .header-right-side {
+    min-width: 100px;
+  }
 }
 .app-foundry-header .header-container .top-container .header-right-side div {
   cursor: pointer;
@@ -10297,7 +10306,15 @@ h3 {
 }
 @media only screen and (min-width: 1025px) {
   .footer-container .widgets-wrapper .container {
-    max-width: 940px !important;
+    max-width: 1260px !important;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 1.889em;
+  }
+}
+@media only screen and (min-width: 1240px) {
+  .footer-container .widgets-wrapper .container {
+    max-width: 1260px !important;
     margin: 0 auto;
     position: relative;
     padding: 0 1.889em;
@@ -10702,16 +10719,21 @@ h3 {
     visibility: hidden;
     opacity: 0;
     margin-top: -10px;
-    top: 100px;
+    top: 130px;
     right: 0px;
     position: absolute;
     z-index: 500;
-    border-radius: 20px;
+    border-radius: 0 0 0 20px;
     box-shadow: 0px 1px 3px 1px #d5d5d5;
   }
   .navigation-sidebar.show-mobile-mode {
     visibility: visible;
     opacity: 1;
+  }
+}
+@media (max-width: 414px) {
+  .navigation-sidebar {
+    top: 150px;
   }
 }
 
@@ -10900,6 +10922,11 @@ h3 {
 .authentication-container .signup-button:hover {
   color: #ff4f1f;
   background: white;
+}
+@media (max-width: 500px) {
+  .authentication-container .signup-button {
+    display: none;
+  }
 }
 .authentication-container a {
   color: #868686;
@@ -11919,13 +11946,13 @@ LOGGIN IN MODAL
   margin-bottom: 5px;
 }
 .badge-fields-container .form-group textarea {
-  height: 135px;
+  height: 185px;
 }
 .badge-fields-container .info-fields-container {
   display: flex;
   flex-flow: column wrap;
   width: 100%;
-  height: 170px;
+  height: 220px;
 }
 
 .filter-profile-entry {
@@ -12022,6 +12049,7 @@ LOGGIN IN MODAL
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid #eee;
+  position: relative;
 }
 .profile-card-outer-container .card-container .card-icon-container img {
   max-height: 100px;
@@ -12031,7 +12059,7 @@ LOGGIN IN MODAL
 .profile-card-outer-container .card-container .card-icon-container .card-userStatus {
   position: absolute;
   top: 10px;
-  right: 30px;
+  right: 10px;
 }
 .profile-card-outer-container .card-container .card-title-desc-container {
   width: 100%;
@@ -12045,7 +12073,7 @@ LOGGIN IN MODAL
 }
 @media (max-width: 768px) {
   .profile-card-outer-container .card-container .card-title-desc-container .card-title {
-    font-size: 12px;
+    font-size: 15px;
     margin-bottom: 0px;
   }
 }
@@ -12100,7 +12128,7 @@ LOGGIN IN MODAL
 }
 @media (max-width: 768px) {
   .profile-card-outer-container .card-container .card-title-desc-container .card-programming {
-    font-size: 10px;
+    font-size: 15px;
     margin-bottom: 0px;
   }
 }
@@ -12141,6 +12169,7 @@ LOGGIN IN MODAL
 @media (max-width: 768px) {
   .profile-card-outer-container .card-container {
     margin: 0px;
+    height: 275px;
     width: 45vw;
     overflow: hidden;
   }
@@ -12205,6 +12234,7 @@ LOGGIN IN MODAL
 }
 @media (max-width: 768px) {
   .sort-panel .categories-container .category-text {
+    text-align: center;
     min-width: 0px;
     font-size: small;
   }
@@ -12397,6 +12427,86 @@ LOGGIN IN MODAL
 }
 
 .badge-detail-name {
+  font-weight: bold;
+}
+
+.genbadge-details {
+  font-weight: bold;
+  font-size: 1.17em;
+}
+.genbadge-details i {
+  color: #4e5054;
+  cursor: pointer;
+  padding-left: 5px;
+  float: right;
+  font-size: 1.17em;
+}
+.genbadge-details i:hover {
+  color: #FF4B23;
+}
+
+.modal-content .btn {
+  border: none;
+  width: 90px;
+  height: 38px;
+  border-radius: 25px;
+  color: #FF4B23;
+  background-color: white;
+  border: 1.5px solid #FF4B23;
+  font-size: 16px;
+  outline: none;
+  transition-duration: 0.3s;
+}
+.modal-content .btn:hover {
+  background-color: #FF4B23;
+  color: white;
+  border-color: #FF4B23;
+  transition-duration: 0.3s;
+}
+
+.genbadge-detail-text label {
+  font-size: 1.1em;
+  font-style: italic;
+}
+
+.genbadge-detail {
+  margin: 10px;
+  padding: 10px;
+  transition-duration: 0.1s;
+  overflow: auto;
+}
+.genbadge-detail a {
+  color: #4e5054;
+  cursor: pointer;
+}
+.genbadge-detail a:hover {
+  color: #FF4B23;
+}
+.genbadge-detail .genbadge-detail-logo {
+  float: left;
+  width: 70px;
+  height: 70px;
+  margin-right: 20px;
+}
+.genbadge-detail .genbadge-detail-logo img {
+  width: 100%;
+  height: 100%;
+  border-radius: 25%;
+}
+.genbadge-detail .genbadge-detail-controls {
+  float: right;
+  margin-top: -5px;
+}
+.genbadge-detail .genbadge-detail-controls i {
+  color: #4e5054;
+  cursor: pointer;
+  padding-left: 5px;
+}
+.genbadge-detail .genbadge-detail-controls i:hover {
+  color: #FF4B23;
+}
+
+.genbadge-detail-name {
   font-weight: bold;
 }
 
